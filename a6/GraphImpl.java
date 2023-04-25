@@ -100,7 +100,7 @@ public class GraphImpl implements Graph {
         while (queue.size() > 0) {
             String n = queue.poll().getLabel();
             if (settled.containsKey(n)) {continue;}
-            settled.put(n, 0.0);
+            settled.put(n, this.nodes.get(n).getDist());
             ArrayList<Edge> edges = this.nodes.get(n).getEdges();
             for (int i = 0; i < edges.size(); i++) {
                 if (!settled.containsKey(edges.get(i).getDest().getName())) {
