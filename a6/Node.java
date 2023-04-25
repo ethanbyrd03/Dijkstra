@@ -1,5 +1,8 @@
 package a6;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public interface Node {
 
      /* You will include the method signatures (return type, name, and arg types) for any node methods you
@@ -15,5 +18,23 @@ public interface Node {
       * @return the name of the node
       */
      String getName();
+     ArrayList<Edge> getEdges();
+
+     Edge getEdge(Node other);
+
+     Integer getIndeg(Map<String, Node> nodes);
+
+     void decIndeg();
+
+     void incIndeg();
+     boolean hasEdge(Node other);
+
+     void delEdge(Node other);
+
+     void setDist(Double n);
+
+     void addDist(Double n);
+
+     double getDist();
 
 }
